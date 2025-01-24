@@ -34,7 +34,7 @@ jobs:
       
       - name: Obfuscate BPB worker js
         run: |
-          javascript-obfuscator origin.js --output _worker.js \
+          javascript-obfuscator origin.js --output worker.js \
           --compact true \
           --control-flow-flattening true \
           --control-flow-flattening-threshold 1 \
