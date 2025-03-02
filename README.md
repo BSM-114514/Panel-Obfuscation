@@ -1,4 +1,4 @@
-# BPB-Code-Obfuscation
+# Panel-Obfuscation
 
 一个用于混淆BPB代码的项目
 
