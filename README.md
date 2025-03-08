@@ -30,7 +30,7 @@
 
 2.有节点泄露风险
 
-根据CM大佬的文章（[点击跳转](https://vercel.blog.cmliussss.com/p/BPBbug/)）得知，BPB面板有以下三个泄露问题：
+根据CM大佬的文章（[点击跳转](https://blog.cmliussss.com/p/BPBbug/)）得知，BPB面板有以下三个泄露问题：
 
 1. 使用默认反代地址 `www.speedtest.net`，导致项目容易被网络测绘采集，同时容易被封号
 2. 使用面板默认密码`admin`，导致别人可以使用默认密码来登录你的面板来获取你的节点（但BPB v2.4.7已移除`admin`默认密码，所以这个漏洞只适用于v2.4.5及以前的BPB面板）
