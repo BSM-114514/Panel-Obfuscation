@@ -1,3 +1,7 @@
+> [!NOTE]
+>
+> 本项目已归档。
+
 # Panel-Obfuscation
 
 一个用于混淆BPB代码的项目
@@ -6,27 +10,38 @@
 
 ## 关于本项目
 
-##### 本项目的目的
-
-------
+### 本项目的目的
 
 本项目是将[BPB-Worker-Panel](https://github.com/bia-pain-bache/BPB-Worker-Panel)项目中的“worker.js”代码进行混淆，以通过Cloudflare的审查。
 
-##### 为什么会有这个项目？
+但在经历了一些事情后，我现已不推荐BPB项目来当节点了。
 
 ------
 
-还不是因为Cloudflare！
+## 不推荐的原因
 
-由于很多人在Cloudflare Workers/Pages中使用了BPB项目搭建了可以上外网的代理节点（相当于VPN，但和VPN有着本质上的区别，区别将在后文提到），导致Cloudflare认为这不符合使用Workers/Pages来搭建网页的目的（当然也有可能是会影响他们的WARP的用户，因为两者的用途很相似），于是Cloudflare更新了用户政策并封杀了相关的Workers/Pages（被封杀后相关网页会显示1101错误，同时代理工具会无法连接或测试延迟时会提示超时）。为了应对Cloudflare的行为，BPB的作者便对成品worker.js代码进行混淆，以通过Cloudflare的审查，但很多人直接使用BPB作者发布的worker.js来部署，导致Cloudflare发现后进行了封禁。不过，只要将BPB的worker.js代码混淆成一个全新的代码，并且这个代码只能自己使用，那Cloudflare就不会封你的BPB节点了，这也便是本项目的由来之一了。
+1.无法联网
 
-OK，讲了这么多，那我们来看看如何在Cloudflare上部署BPB项目吧！
+在我搭建完BPB节点后，我使用v2rayN连接这个节点时发现了一些问题：使用全局路由或绕过大陆路由都无法检测到ip，而黑名单路由可以显示ip（但是是所连网络分配的ip了，但这样还有翻墙的意义吗），在经过搜查后依旧无法解决，干脆直接不用了。
 
-## 部署BPB项目
+目前推荐cmliu/edgetunnel项目（CM大佬搭建的）和yonggekkk/Cloudflare_vless_trojan项目（甬哥搭建的），这两个经测试都可以正常使用。
 
-> [!NOTE]
->
-> 懒得写了……以后再写了
->
-> 教程请看https://www.haoyep.com/posts/cf-bpb-vpn/
+另外BPB就是基于甬哥的项目来开发的，只不过采用了图形化界面来让配置节点更容易。那既然不用BPB了，那就用甬哥的项目吧，反正都差不多。
 
+2.有节点泄露风险
+
+根据CM大佬的文章（[点击跳转](https://vercel.blog.cmliussss.com/p/BPBbug/)）得知，BPB面板有以下三个泄露问题：
+
+1. 使用默认反代地址 `www.speedtest.net`，导致项目容易被网络测绘采集，同时容易被封号
+2. 使用面板默认密码`admin`，导致别人可以使用默认密码来登录你的面板来获取你的节点（但BPB v2.4.7已移除`admin`默认密码，所以这个漏洞只适用于v2.4.5及以前的BPB面板）
+3. 使用默认的UUID`89b3cbba-e6ac-485a-9481-976a0415eab9`，导致修改密码后别人仍然可以获取你的节点
+
+所以，出于安全考虑，建议别用BPB了。
+
+------
+
+## 该项目的后续处理
+
+目前计划将该项目归档，相当于该项目已被弃用，不过可能会考虑未来重新启用该项目。
+
+就这样，再见。
