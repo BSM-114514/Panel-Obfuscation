@@ -10,7 +10,7 @@
 
 ------
 
-本项目是将[BPB-Worker-Panel]((github.com/bia-pain-bache/BPB-Worker-Panel))项目中的“worker.js”代码进行混淆，以通过Cloudflare的审查。
+本项目是将[BPB-Worker-Panel](https://github.com/bia-pain-bache/BPB-Worker-Panel)项目中的“worker.js”代码进行混淆，以通过Cloudflare的审查。
 
 ##### 为什么会有这个项目？
 
